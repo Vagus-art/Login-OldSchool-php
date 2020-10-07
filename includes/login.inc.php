@@ -33,8 +33,9 @@ if (isset($_POST["submit-login"])) {
                     $message["text"] = "The pasword is invalid.";
                     $email_retry = $email;
                 } else {
-                    $message["class"] = "alert-success";
-                    $message["text"] = "Logged in.";
+                    $_SESSION["username"] = $user_data["username"];
+                    $_SESSION["user_id"] = $user_data["user_id"];
+                    header("Location: /index.php");
                 }
             }
             mysqli_stmt_free_result($stmt);

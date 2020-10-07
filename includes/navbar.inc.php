@@ -6,15 +6,22 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/login.php">Log in</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/signup.php">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Log out</a>
-            </li>
+            <?php
+            if (!isset($username) && !isset($password))
+                echo
+                    "<li class='nav-item'>
+                    <a class='nav-link' href='/login.php'>Log in</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' href='/signup.php'>Sign up</a>
+                </li>";
+            else
+                echo
+                    "<li class='nav-item'>
+                    <a class='nav-link' href='/logout.php'>Log out</a>
+                </li>"
+            ?>
+
         </ul>
     </div>
 </nav>
